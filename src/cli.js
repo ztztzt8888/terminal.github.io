@@ -9,7 +9,7 @@ const errors = {
 };
 
 const struct = {
-  root: ['about', 'resume', 'links', 'jobs', 'skills']};
+  root: ['about', 'resume', /*'links',*/ 'jobs', 'skills']};
 
 const commands = {};
 let systemData = {};
@@ -135,7 +135,7 @@ $(() => {
   $.ajaxSetup({ cache: false });
   const pages = [];
   pages.push($.get('pages/about.html'));
-  pages.push($.get('pages/links.html'));
+  // pages.push($.get('pages/links.html'));
   pages.push($.get('pages/help.html'));
   pages.push($.get('pages/resume.html'));
   pages.push($.get('pages/root.html'));
@@ -146,7 +146,7 @@ $(() => {
     .done(
       (
         aboutData,
-        linksData,
+        // linksData,
         helpData,
         resumeData,
         rootData,
@@ -154,7 +154,7 @@ $(() => {
         jobsData,
       ) => {
         systemData['about'] = aboutData[0];
-        systemData['links'] = linksData[0];
+        // systemData['links'] = linksData[0];
         systemData['help'] = helpData[0];
         systemData['resume'] = resumeData[0];
         systemData['root'] = rootData[0];
